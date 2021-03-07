@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-结构体排序的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以学生这个结构体为例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">int</span> worths;<span class="comment">//财富</span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">&#125;stu[<span class="number">1000</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>以字典序排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含头文件《cstring》</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s=<span class="built_in">strcmp</span>(a.name,b.name);</span><br><span class="line">    <span class="keyword">if</span>(s!=<span class="number">0</span>)<span class="keyword">return</span> s&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>/以分数等int型数据的大小为排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.score&lt;b.score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>//多种排序规则组合</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a.worths!=b.worths)<span class="keyword">return</span> a.worths&lt;b.worths;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a.age!=b.age) <span class="keyword">return</span> a.age&lt;b.age;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">strcmp</span>(a.name,b.name)&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>总结：当要执行排序是，先要清楚哪一种排序的优先级更高，列出来，然后进行组合的排序规则。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/07/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-凸优化笔记1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,6 +240,9 @@
         <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="1-仿射组合，凸组合，凸锥"><a href="#1-仿射组合，凸组合，凸锥" class="headerlink" title="1.仿射组合，凸组合，凸锥"></a>1.仿射组合，凸组合，凸锥</h3><p>仿射集：通过直线定义 ；<br>$$<br>对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；<br>$$<br>仿射组合：<br>$$<br>tx+(1-t)y,对于任意t;<br>$$</p>
 <p>凸集：通过线段定义；<br>$$<br>对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；<br>$$<br>凸组合：<br>$$<br>tx+(1-t)y,对于t属于[0,1];<br>$$</p>
 <p>凸锥：通过射线定义；<br>$$<br>对于任意的x,y和原点属于集合A,存在t&gt;0,x=ty;<br>$$</p>
+<p>==高亮==</p>
+<p>我是^上标^</p>
+<p><del>下标</del></p>
 
       
 
