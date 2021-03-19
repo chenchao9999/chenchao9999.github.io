@@ -160,11 +160,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>凸函数</p>
-<p>一阶条件<br>$$<br>domf为凸集\<br>f(y)\geq f(x)+\Delta f(x)(y-x)<br>$$<br>二阶条件<br>$$<br>hessian\quad matrix 半正定<br>$$</p>
-<p>例子</p>
+<p>一阶条件</p>
+<script type="math/tex; mode=display">
+domf为凸集\\
+f(y)\geq f(x)+\Delta f(x)(y-x)</script><p>二阶条件</p>
+<script type="math/tex; mode=display">
+hessian\quad matrix 半正定</script><p>例子</p>
 <p>二次函数，仿射函数，指数函数，绝对值函数，范数，负熵。</p>
-<p>极大值函数<br>$$<br>log-sum-up\<br>f(x)=log(e^{x_1}+e^{x_2}+e^{x_3}+\dots+e^{x_n})\<br>max{x_1,x_2\dots x_n}\le f(x)\le max{x_1,x_2\dots x_n}+logn<br>$$</p>
-<p>函数共轭<br>$$<br>f(x):R^n-&gt;R \quad f^*:R^n-&gt;R \quad\<br>f^*(y)=sup{y^Tx-f(x}<br>$$<br>函数共轭后必为凸函数，直观表现为找到截距最大的方向y；</p>
+<p>极大值函数</p>
+<script type="math/tex; mode=display">
+log-sum-up\\
+f(x)=log(e^{x_1}+e^{x_2}+e^{x_3}+\dots+e^{x_n})\\
+max\{x_1,x_2\dots x_n\}\le f(x)\le max\{x_1,x_2\dots x_n\}+logn</script><p>函数共轭</p>
+<script type="math/tex; mode=display">
+f(x):R^n->R \quad f^*:R^n->R \quad\\
+f^*(y)=sup\{y^Tx-f(x\}</script><p>函数共轭后必为凸函数，直观表现为找到截距最大的方向y；</p>
 
       
 
@@ -213,9 +223,33 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>常见凸集及保持凸性的变换</p>
-<p>1、线性变化及其逆变换<br>$$<br>y=Ax+b<br>$$</p>
-<p>2、两个凸集的和/笛卡尔积<br>$$<br>S_1+S_2={x+y\mid x\in S_1，y\in S_2 }<br>\<br>S_1+S_2={(x,y)\mid x\in S_1，y\in S_2 }<br>$$<br>3、矩阵不等式<br>$$<br>A(x)=x_1A_1+x_2A_2…+x_nA_n \其中x_i,A_i半正定；<br>$$<br>4、透视函数<br>$$<br>P:R^{n+1}-&gt;R^{n};<br>P(z,t)=z/t;<br>\其中t&gt;0,z\in R^n;<br>$$<br>5、线性分式函数<br>$$<br>先经过仿射变换，在经过透视函数，是一个拟凸函数。\<br>f(x)=\frac{Ax+b}{c^Tx+d}\<br>domf={x\mid c^Tx+d&gt;0}<br>仿射变换 g(\sigma)= \begin{array}<br>    {|c|}<br>    A\<br>    c^T<br>    \end{array}x+\begin{array}<br>    {|c|}<br>    b\<br>    d<br>    \end{array}\<br>    f=p\cdot g(\sigma)<br>$$</p>
-<p>总结：</p>
+<p>1、线性变化及其逆变换</p>
+<script type="math/tex; mode=display">
+y=Ax+b</script><p>2、两个凸集的和/笛卡尔积</p>
+<script type="math/tex; mode=display">
+S_1+S_2=\{x+y\mid x\in S_1，y\in S_2 \}
+\\
+S_1+S_2=\{(x,y)\mid x\in S_1，y\in S_2 \}</script><p>3、矩阵不等式</p>
+<script type="math/tex; mode=display">
+A(x)=x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；</script><p>4、透视函数</p>
+<script type="math/tex; mode=display">
+P:R^{n+1}->R^{n};
+P(z,t)=z/t;
+\\其中t>0,z\in R^n;</script><p>5、线性分式函数</p>
+<script type="math/tex; mode=display">
+先经过仿射变换，在经过透视函数，是一个拟凸函数。\\
+f(x)=\frac{Ax+b}{c^Tx+d}\\
+domf=\{x\mid c^Tx+d>0\}
+仿射变换 g(\sigma)= \begin{array}
+    {|c|}
+    A\\
+    c^T
+    \end{array}x+\begin{array}
+    {|c|}
+    b\\
+    d
+    \end{array}\\
+    f=p\cdot g(\sigma)</script><p>总结：</p>
 <p>要善于将低维映射到高维（笛卡尔积保持凸性的证明）$ f(x,y)=x+y$</p>
 <p>降维处理（透视函数）告诉我们线段小孔成像后还是线段；</p>
 <p>线性变换对应压缩旋转移位都保持凸性；</p>
@@ -266,24 +300,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#结构体排序</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以学生这个结构体为例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">int</span> worths;<span class="comment">//财富</span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">&#125;stu[<span class="number">1000</span>];</span><br></pre></td></tr></table></figure>
-
-
-
+        <h1 id="结构体排序"><a href="#结构体排序" class="headerlink" title="结构体排序"></a>结构体排序</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以学生这个结构体为例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">int</span> worths;<span class="comment">//财富</span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">&#125;stu[<span class="number">1000</span>];</span><br></pre></td></tr></table></figure>
 <p>以字典序排序</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含头文件《cstring》</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s=<span class="built_in">strcmp</span>(a.name,b.name);</span><br><span class="line">    <span class="keyword">if</span>(s!=<span class="number">0</span>)<span class="keyword">return</span> s&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>/以分数等int型数据的大小为排序</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.score&lt;b.score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>//多种排序规则组合</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a.worths!=b.worths)<span class="keyword">return</span> a.worths&lt;b.worths;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a.age!=b.age) <span class="keyword">return</span> a.age&lt;b.age;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">strcmp</span>(a.name,b.name)&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>总结：当要执行排序是，先要清楚哪一种排序的优先级更高，列出来，然后进行组合的排序规则。</p>
 
       
@@ -347,10 +370,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="1-仿射组合，凸组合，凸锥"><a href="#1-仿射组合，凸组合，凸锥" class="headerlink" title="1.仿射组合，凸组合，凸锥"></a>1.仿射组合，凸组合，凸锥</h3><p>仿射集：通过直线定义 ；<br>$$<br>对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；<br>$$<br>仿射组合：<br>$$<br>tx+(1-t)y,对于任意t;<br>$$</p>
-<p>凸集：通过线段定义；<br>$$<br>对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；<br>$$<br>凸组合：<br>$$<br>tx+(1-t)y,对于t属于[0,1];<br>$$</p>
-<p>凸锥：通过射线定义；<br>$$<br>对于任意的x,y和原点属于集合A,存在t&gt;0,x=ty;<br>$$</p>
-
+        <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="1-仿射组合，凸组合，凸锥"><a href="#1-仿射组合，凸组合，凸锥" class="headerlink" title="1.仿射组合，凸组合，凸锥"></a>1.仿射组合，凸组合，凸锥</h3><p>仿射集：通过直线定义 ； </p>
+<script type="math/tex; mode=display">
+对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；</script><p>仿射组合：</p>
+<script type="math/tex; mode=display">
+tx+(1-t)y,对于任意t;</script><p>凸集：通过线段定义；</p>
+<script type="math/tex; mode=display">
+对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；</script><p>凸组合：</p>
+<script type="math/tex; mode=display">
+tx+(1-t)y,对于t属于[0,1];</script><p>凸锥：通过射线定义；</p>
+<script type="math/tex; mode=display">
+对于任意的x,y和原点属于集合A,存在t>0,x=ty;</script>
       
 
       
