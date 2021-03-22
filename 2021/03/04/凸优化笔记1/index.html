@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>凸优化笔记1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见凸集及保持凸性的变换 1、线性变化及其逆变换  y&#x3D;Ax+b2、两个凸集的和&#x2F;笛卡尔积  S_1+S_2&#x3D;\{x+y\mid x\in S_1，y\in S_2 \} \\ S_1+S_2&#x3D;\{(x,y)\mid x\in S_1，y\in S_2 \}3、矩阵不等式  A(x)&#x3D;x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；4、透视函数  P:R^{n+1}-">
+  <meta name="description" content="仿射、凸、凸锥1.仿射组合，凸组合，凸锥仿射集：通过直线定义 ；   对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；仿射组合：  tx+(1-t)y,对于任意t;凸集：通过线段定义；  对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；凸组合：  tx+(1-t)y,对于t属于[0,1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:title" content="凸优化笔记1">
+<meta property="og:url" content="http://example.com/2021/03/04/%E5%87%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B01/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="常见凸集及保持凸性的变换 1、线性变化及其逆变换  y&#x3D;Ax+b2、两个凸集的和&#x2F;笛卡尔积  S_1+S_2&#x3D;\{x+y\mid x\in S_1，y\in S_2 \} \\ S_1+S_2&#x3D;\{(x,y)\mid x\in S_1，y\in S_2 \}3、矩阵不等式  A(x)&#x3D;x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；4、透视函数  P:R^{n+1}-">
+<meta property="og:description" content="仿射、凸、凸锥1.仿射组合，凸组合，凸锥仿射集：通过直线定义 ；   对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；仿射组合：  tx+(1-t)y,对于任意t;凸集：通过线段定义；  对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；凸组合：  tx+(1-t)y,对于t属于[0,1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-19T10:38:07.887Z">
-<meta property="article:modified_time" content="2021-03-19T11:59:57.177Z">
+<meta property="article:published_time" content="2021-03-04T10:56:02.000Z">
+<meta property="article:modified_time" content="2021-03-07T07:11:01.744Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,43 +154,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-凸函数/常见凸集及保持凸性的变换" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-凸优化笔记1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      凸优化笔记1
+    </h1>
+  
+
+        
+        <a href="/2021/03/04/%E5%87%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B01/" class="archive-article-date">
+  	<time datetime="2021-03-04T10:56:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常见凸集及保持凸性的变换</p>
-<p>1、线性变化及其逆变换</p>
+        <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="1-仿射组合，凸组合，凸锥"><a href="#1-仿射组合，凸组合，凸锥" class="headerlink" title="1.仿射组合，凸组合，凸锥"></a>1.仿射组合，凸组合，凸锥</h3><p>仿射集：通过直线定义 ； </p>
 <script type="math/tex; mode=display">
-y=Ax+b</script><p>2、两个凸集的和/笛卡尔积</p>
+对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；</script><p>仿射组合：</p>
 <script type="math/tex; mode=display">
-S_1+S_2=\{x+y\mid x\in S_1，y\in S_2 \}
-\\
-S_1+S_2=\{(x,y)\mid x\in S_1，y\in S_2 \}</script><p>3、矩阵不等式</p>
+tx+(1-t)y,对于任意t;</script><p>凸集：通过线段定义；</p>
 <script type="math/tex; mode=display">
-A(x)=x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；</script><p>4、透视函数</p>
+对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；</script><p>凸组合：</p>
 <script type="math/tex; mode=display">
-P:R^{n+1}->R^{n};
-P(z,t)=z/t;
-\\其中t>0,z\in R^n;</script><p>5、线性分式函数</p>
+tx+(1-t)y,对于t属于[0,1];</script><p>凸锥：通过射线定义；</p>
 <script type="math/tex; mode=display">
-先经过仿射变换，在经过透视函数，是一个拟凸函数。\\
-f(x)=\frac{Ax+b}{c^Tx+d}\\
-domf=\{x\mid c^Tx+d>0\}
-仿射变换 g(\sigma)= \begin{array}
-    {|c|}
-    A\\
-    c^T
-    \end{array}x+\begin{array}
-    {|c|}
-    b\\
-    d
-    \end{array}\\
-    f=p\cdot g(\sigma)</script><p>总结：</p>
-<p>要善于将低维映射到高维（笛卡尔积保持凸性的证明）$ f(x,y)=x+y$</p>
-<p>降维处理（透视函数）告诉我们线段小孔成像后还是线段；</p>
-<p>线性变换对应压缩旋转移位都保持凸性；</p>
-
+对于任意的x,y和原点属于集合A,存在t>0,x=ty;</script>
       
 
       
@@ -269,7 +263,7 @@ domf=\{x\mid c^Tx+d>0\}
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/04/%E5%87%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,7 +277,7 @@ domf=\{x\mid c^Tx+d>0\}
   
 <nav id="article-nav">
   
-    <a href="/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0/%E5%87%B8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E5%8F%8A%E5%85%B6%E4%BE%8B%E5%AD%90/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/07/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -292,11 +286,6 @@ domf=\{x\mid c^Tx+d>0\}
       </div>
     </a>
   
-  
-    <a href="/2021/03/07/%E7%AE%97%E6%B3%95/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
