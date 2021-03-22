@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-对偶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="对偶"><a href="#对偶" class="headerlink" title="对偶"></a>对偶</h2><p>原问题</p>
+<script type="math/tex; mode=display">
+min f_0(x);\\
+s.t:f_i(x)\le0 ，f_i(x)为凸函数;\\
+\quad\quad h_i(x)=0，h_i(x)为仿射;\\</script><p>原问题拉格朗日松弛后的问题</p>
+<script type="math/tex; mode=display">
+P^*=minmaxL(x,\lambda,\nu)=f_0(x)+\lambda^Tf_i(x)+\nu^Th_i(x)\\
+s,t:\lambda_i\ge0;</script><p>对偶问题</p>
+<script type="math/tex; mode=display">
+引入对偶变量，构造拉格朗日函数L(x,\lambda,\nu)，然后min\quad L(x,\lambda,\nu)得到对偶函数g(\lambda,\nu),最后max \quad
+g(\lambda,\nu)得到d^*</script><p>即：</p>
+<script type="math/tex; mode=display">
+d^*=argmaxminL(x,\lambda,\nu)=f_0(x)+\lambda^Tf_i(x)+\nu^Th_i(x)\\
+s,t:\lambda_i\ge0;</script><script type="math/tex; mode=display">
+显然d^*=max\quad g(\lambda,\nu)\le P^*,对一切问题都成立。当原文题为一般的凸问题（满足slater条件时），等号成立，又称对偶间隙为0</script><p>总结，当原问题引入对偶之后，对偶问题就成为了凸问题。此时对偶解提供了最优解的下界，d*。当满足鞍点定理是最优解是对偶解，最优值也等于对偶解的值。即做松弛之后可让问题可求解。</p>
+<p>对偶解的几何解释</p>
+<script type="math/tex; mode=display">
+min f_0(x);\\
+s.t:f_1(x)\le0;
+\\G=\{(f_1(x),f_0(x))\mid x\in D\};
+\\g(\lambda)=inf\{\lambda u+t\mid (u,t)\in G\};</script><p>如图：</p>
+<p><img src="file:///C:\Users\Administrator.WIN-7DS1IR1FSGH\Documents\Tencent Files\1853392115\Image\C2C\`}35D" alt="img">V3V89OXAGLHB_NJ0E.png)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/22/%E5%AF%B9%E5%81%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-凸函数判断及其例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
