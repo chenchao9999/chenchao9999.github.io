@@ -152,28 +152,407 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-对偶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-统计机器学习4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/">统计机器学习4</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/" class="archive-article-date">
+  	<time datetime="2021-03-24T08:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="对偶"><a href="#对偶" class="headerlink" title="对偶"></a>对偶</h2><p>原问题</p>
+        <h1 id="SVM：间隔、对偶、核技巧"><a href="#SVM：间隔、对偶、核技巧" class="headerlink" title="SVM：间隔、对偶、核技巧"></a>SVM：间隔、对偶、核技巧</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">硬间隔svm例如二分类的{0,1}；最大间隔分类器，线性分类器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">软间隔svm例如（0,1）；线性分类器</td>
+</tr>
+<tr>
+<td style="text-align:left">kernel svm 非线性分类</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="硬间隔："><a href="#硬间隔：" class="headerlink" title="硬间隔："></a>硬间隔：</h3><script type="math/tex; mode=display">
+最大间隔分类器：
+max \quad margin(w,b);样本点\{x_i,y_i\},y_i\in\{-1,1\}\\
+s.t:y_i(w^Tx_i+b)>0;
+
+\\margin(w,b)=min 最小的样本点到超平面的distance；\\
+distance=\frac{|w^Tx_i+b|}{\left\|w\right\|_2}
+
+\\对于y_i(w^Tx_i+b)做归一化max\quad  \frac{1}{\left\|w\right\|_2}；
+\\s.t.min \quad y_i(w^Tx_i+b)=1;等价于y_i(w^Tx_i+b)\ge 1</script><h3 id="对偶：见对偶章节；"><a href="#对偶：见对偶章节；" class="headerlink" title="对偶：见对偶章节；"></a>对偶：见对偶章节；</h3><p>方法：拉格朗日函数对（w,b)求导之后回带，然后就变成关于对偶变量的函数。最后会有明显的内积形式出现，也就将核方法引进，从线性分类器扩展到非线性可分了。</p>
+<h4 id="最后问题：（对偶问题）"><a href="#最后问题：（对偶问题）" class="headerlink" title="最后问题：（对偶问题）"></a>最后问题：（对偶问题）</h4><script type="math/tex; mode=display">
+min：\quad \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_jx_i^Tx_j-\sum_{i=1}^n\lambda_i;\\
+s.t:\lambda_i\ge0;\\
+\sum_{i=1}^n\lambda_iy_i=0;</script>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-统计机器学习3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/">统计机器学习3</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/" class="archive-article-date">
+  	<time datetime="2021-03-24T07:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="降维"><a href="#降维" class="headerlink" title="##降维"></a>##降维</h1><h2 id="PCA（重构原始的特征空间）"><a href="#PCA（重构原始的特征空间）" class="headerlink" title="PCA（重构原始的特征空间）"></a>PCA（重构原始的特征空间）</h2><p>方向：最大投影方差，最小重构代价；</p>
 <script type="math/tex; mode=display">
+J=\sum\{(x_i-\bar{x})^T\mu_i\}^2\\
+x_i-\bar{x}:中心化\\
+内积然后最大化
+
+\\J=\mu^TCov（x，x）\mu;
+\\max \quad J;</script><p>实质是找协方差矩阵的特征值。因此可以引入SVD。</p>
+<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><script type="math/tex; mode=display">
+列满秩矩阵A；\\
+A=UQV^T;\\其中Q为对角阵，V、U为正交矩阵；
+具体求法利用AA^T来求得特征值。\\利用常规二次型的方法来求解正交矩阵</script>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-统计机器学习2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02/">统计机器学习2</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02/" class="archive-article-date">
+  	<time datetime="2021-03-24T07:32:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多维高斯分布"><a href="#多维高斯分布" class="headerlink" title="##多维高斯分布"></a>##多维高斯分布</h1><h2 id="高斯分布"><a href="#高斯分布" class="headerlink" title="##高斯分布"></a>##高斯分布</h2><script type="math/tex; mode=display">
+X\sim N(\mu,\Sigma)=\frac{1}{2\pi^{\frac{p}{2}}|\Sigma|^{\frac{1}{2}}}exp\{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\};</script><h3 id="已知："><a href="#已知：" class="headerlink" title="已知："></a>已知：</h3><script type="math/tex; mode=display">
+x=\left[
+ \begin{array}{ccc}
+     x_{a}  \\
+     x_{b}  \\    
+ \end{array}
+ \right] 
+ \quad\mu=\left[
+ \begin{array}{ccc}
+     \mu_{a}   \\
+     \mu_{b}  \\    
+ \end{array}
+ \right] 
+ \\维度：m+n=p；
+ \\\Sigma=\left[
+ \begin{array}{ccc}
+     \Sigma_{aa} & \Sigma_{ab}  \\
+     \Sigma_{ba} &\Sigma_{bb}\\  
+ \end{array}
+ \right]</script><p>边缘分布：</p>
+<script type="math/tex; mode=display">
+x_a=(I_m，0)\left[
+ \begin{array}{ccc}
+     x_{a}  \\
+     x_{b}  \\    
+ \end{array}
+ \right]\\
+
+ E(x_a)=(I_m，0)\left[
+ \begin{array}{ccc}
+     \mu_{a}  \\
+     \mu_{b}  \\    
+ \end{array}
+ \right]=\mu_a\\
+ Var(x_a)=(I_m，0)\left[
+ \begin{array}{ccc}
+     \Sigma_{aa} & \Sigma_{ab}  \\
+     \Sigma_{ba} &\Sigma_{bb}\\  
+ \end{array}
+ \right](I_m，0)^T=\Sigma _{aa}\\
+  {对于x_b同理。}</script><p>条件概率分布：</p>
+<script type="math/tex; mode=display">
+利用schur补来构造性证明，一般用于分块矩阵的乘法\\
+
+对于非奇异矩阵A，P=\left[
+ \begin{array}{ccc}
+     A & B \\
+    C & D\\  
+ \end{array}
+ \right]\\
+det(P)=det(\left[
+ \begin{array}{ccc}
+     A & 0 \\
+    C & D-CA^{-1}B\\  
+ \end{array}
+ \right]\left[
+ \begin{array}{ccc}
+     I & A^{-1}B \\
+    0& I\\  
+ \end{array}
+ \right])\\
+ 于是构造:\\
+x_{b\cdot a}=x_b-\Sigma_{ba}\Sigma{aa}^{-1}x_a;\\
+\mu_{b\cdot a}=\mu_b-\Sigma_{ba}\Sigma{aa}^{-1}\mu_a;\\
+\Sigma_{bb\cdot a}=\Sigma_{bb}-\Sigma_{ba}\Sigma{aa}^{-1}\Sigma_{ab};\\</script><p>由此求得：</p>
+<script type="math/tex; mode=display">
+x_{b\cdot a}\sim N(\mu_{b\cdot a},\Sigma_{bb\cdot a});
+\\
+x_{b}|x_a\sim N(\mu_{b\cdot a}+\Sigma_{ba}\Sigma{aa}^{-1}x_a,\Sigma_{bb\cdot a});</script><p>此时a，b条件独立了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-统计机器学习1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/">统计机器学习1</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/" class="archive-article-date">
+  	<time datetime="2021-03-24T06:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="频率派和贝叶斯派"><a href="#频率派和贝叶斯派" class="headerlink" title="#频率派和贝叶斯派"></a>#频率派和贝叶斯派</h1><h2 id="基本数据："><a href="#基本数据：" class="headerlink" title="基本数据："></a>基本数据：</h2><script type="math/tex; mode=display">
+X=(x_1,x_2,\dots,x_{n-1},x_n)^T;\\
+\forall x_i,i=1,2\dots n,x_i是一个p维的列向量；</script><h2 id="频率派"><a href="#频率派" class="headerlink" title="##频率派"></a>##频率派</h2><p>频率派认为x是随机变量，满足确定参数C。 $X~P(x|C)$ 分布；因此依据各种方法去估计这个C，一般而言使用充分统计量的函数表达来估计。例如 $MLE$ 来估计参数。本质是一个优化问题。</p>
+<h2 id="贝叶斯派"><a href="#贝叶斯派" class="headerlink" title="##贝叶斯派"></a>##贝叶斯派</h2><p>贝叶斯派认为参数C是一个随机变量，满足一个概率分布P(C)；然后利用贝叶斯公式：</p>
+<script type="math/tex; mode=display">
+p(c|x)=\frac{p(c)p(x|c)}{p(x)};\\
+后验概率=\frac{先验*似然}{边缘概率}；此时c做变量，x做常量。
+\\
+p(x)=\int _C p(x|c)p(c)dc</script><p>本质上是积分问题，找到MAP代替概率估计。由此有朴素贝叶斯估计，概率图模型等。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-对偶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/22/%E5%AF%B9%E5%81%B6/">凸优化笔记4</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/22/%E5%AF%B9%E5%81%B6/" class="archive-article-date">
+  	<time datetime="2021-03-22T14:08:26.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对偶"><a href="#对偶" class="headerlink" title="##对偶"></a>##对偶</h1><h2 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h2><script type="math/tex; mode=display">
 min f_0(x);\\
 s.t:f_i(x)\le0 ，f_i(x)为凸函数;\\
-\quad\quad h_i(x)=0，h_i(x)为仿射;\\</script><p>原问题拉格朗日松弛后的问题</p>
-<script type="math/tex; mode=display">
+\quad\quad h_i(x)=0，h_i(x)为仿射;\\</script><h2 id="原问题拉格朗日松弛后的问题"><a href="#原问题拉格朗日松弛后的问题" class="headerlink" title="原问题拉格朗日松弛后的问题"></a>原问题拉格朗日松弛后的问题</h2><script type="math/tex; mode=display">
 P^*=minmaxL(x,\lambda,\nu)=f_0(x)+\lambda^Tf_i(x)+\nu^Th_i(x)\\
-s,t:\lambda_i\ge0;</script><p>对偶问题</p>
-<script type="math/tex; mode=display">
+s,t:\lambda_i\ge0;</script><h2 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h2><script type="math/tex; mode=display">
 引入对偶变量，构造拉格朗日函数L(x,\lambda,\nu)，然后min\quad L(x,\lambda,\nu)得到对偶函数g(\lambda,\nu),最后max \quad
 g(\lambda,\nu)得到d^*</script><p>即：</p>
 <script type="math/tex; mode=display">
 d^*=argmaxminL(x,\lambda,\nu)=f_0(x)+\lambda^Tf_i(x)+\nu^Th_i(x)\\
 s,t:\lambda_i\ge0;</script><script type="math/tex; mode=display">
 显然d^*=max\quad g(\lambda,\nu)\le P^*,对一切问题都成立。当原文题为一般的凸问题（满足slater条件时），等号成立，又称对偶间隙为0</script><p>总结，当原问题引入对偶之后，对偶问题就成为了凸问题。此时对偶解提供了最优解的下界，d*。当满足鞍点定理是最优解是对偶解，最优值也等于对偶解的值。即做松弛之后可让问题可求解。</p>
-<p>对偶解的几何解释</p>
-<script type="math/tex; mode=display">
+<h2 id="对偶解的几何解释"><a href="#对偶解的几何解释" class="headerlink" title="对偶解的几何解释"></a>对偶解的几何解释</h2><script type="math/tex; mode=display">
 min f_0(x);\\
 s.t:f_1(x)\le0;
 \\G=\{(f_1(x),f_0(x))\mid x\in D\};
@@ -224,16 +603,27 @@ s.t:f_1(x)\le0;
     <article id="post-凸函数判断及其例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E5%8F%8A%E5%85%B6%E4%BE%8B%E5%AD%90/">凸优化笔记3</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E5%8F%8A%E5%85%B6%E4%BE%8B%E5%AD%90/" class="archive-article-date">
+  	<time datetime="2021-03-19T10:58:08.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>凸函数</p>
-<p>一阶条件</p>
-<script type="math/tex; mode=display">
+        <h1 id="凸函数"><a href="#凸函数" class="headerlink" title="凸函数"></a>凸函数</h1><h2 id="一阶条件"><a href="#一阶条件" class="headerlink" title="一阶条件"></a>一阶条件</h2><script type="math/tex; mode=display">
 domf为凸集\\
-f(y)\geq f(x)+\Delta f(x)(y-x)</script><p>二阶条件</p>
-<script type="math/tex; mode=display">
-hessian\quad matrix 半正定</script><p>例子</p>
-<p>二次函数，仿射函数，指数函数，绝对值函数，范数，负熵。</p>
+f(y)\geq f(x)+\Delta f(x)(y-x)</script><h2 id="二阶条件"><a href="#二阶条件" class="headerlink" title="二阶条件"></a>二阶条件</h2><script type="math/tex; mode=display">
+hessian\quad matrix 半正定</script><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>二次函数，仿射函数，指数函数，绝对值函数，范数，负熵。</p>
 <p>极大值函数</p>
 <script type="math/tex; mode=display">
 log-sum-up\\
@@ -287,23 +677,32 @@ f^*(y)=sup\{y^Tx-f(x\}</script><p>函数共轭后必为凸函数，直观表现�
     <article id="post-常见凸集及保持凸性的变换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/19/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/">凸优化笔记2</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/19/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2021-03-19T10:38:07.887Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常见凸集及保持凸性的变换</p>
-<p>1、线性变化及其逆变换</p>
-<script type="math/tex; mode=display">
-y=Ax+b</script><p>2、两个凸集的和/笛卡尔积</p>
-<script type="math/tex; mode=display">
+        <h1 id="常见凸集及保持凸性的变换"><a href="#常见凸集及保持凸性的变换" class="headerlink" title="常见凸集及保持凸性的变换"></a>常见凸集及保持凸性的变换</h1><h2 id="1、线性变化及其逆变换"><a href="#1、线性变化及其逆变换" class="headerlink" title="1、线性变化及其逆变换"></a>1、线性变化及其逆变换</h2><script type="math/tex; mode=display">
+y=Ax+b</script><h2 id="2、两个凸集的和-笛卡尔积"><a href="#2、两个凸集的和-笛卡尔积" class="headerlink" title="2、两个凸集的和/笛卡尔积"></a>2、两个凸集的和/笛卡尔积</h2><script type="math/tex; mode=display">
 S_1+S_2=\{x+y\mid x\in S_1，y\in S_2 \}
 \\
-S_1+S_2=\{(x,y)\mid x\in S_1，y\in S_2 \}</script><p>3、矩阵不等式</p>
-<script type="math/tex; mode=display">
-A(x)=x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；</script><p>4、透视函数</p>
-<script type="math/tex; mode=display">
+S_1+S_2=\{(x,y)\mid x\in S_1，y\in S_2 \}</script><h2 id="3、矩阵不等式"><a href="#3、矩阵不等式" class="headerlink" title="3、矩阵不等式"></a>3、矩阵不等式</h2><script type="math/tex; mode=display">
+A(x)=x_1A_1+x_2A_2...+x_nA_n \\其中x_i,A_i半正定；</script><h2 id="4、透视函数"><a href="#4、透视函数" class="headerlink" title="4、透视函数"></a>4、透视函数</h2><script type="math/tex; mode=display">
 P:R^{n+1}->R^{n};
 P(z,t)=z/t;
-\\其中t>0,z\in R^n;</script><p>5、线性分式函数</p>
-<script type="math/tex; mode=display">
+\\其中t>0,z\in R^n;</script><h2 id="5、线性分式函数"><a href="#5、线性分式函数" class="headerlink" title="5、线性分式函数"></a>5、线性分式函数</h2><script type="math/tex; mode=display">
 先经过仿射变换，在经过透视函数，是一个拟凸函数。\\
 f(x)=\frac{Ax+b}{c^Tx+d}\\
 domf=\{x\mid c^Tx+d>0\}
@@ -316,8 +715,7 @@ domf=\{x\mid c^Tx+d>0\}
     b\\
     d
     \end{array}\\
-    f=p\cdot g(\sigma)</script><p>总结：</p>
-<p>要善于将低维映射到高维（笛卡尔积保持凸性的证明）$ f(x,y)=x+y$</p>
+    f=p\cdot g(\sigma)</script><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>要善于将低维映射到高维（笛卡尔积保持凸性的证明）$ f(x,y)=x+y$</p>
 <p>降维处理（透视函数）告诉我们线段小孔成像后还是线段；</p>
 <p>线性变换对应压缩旋转移位都保持凸性；</p>
 
@@ -367,13 +765,10 @@ domf=\{x\mid c^Tx+d>0\}
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="结构体排序"><a href="#结构体排序" class="headerlink" title="结构体排序"></a>结构体排序</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以学生这个结构体为例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">int</span> worths;<span class="comment">//财富</span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">&#125;stu[<span class="number">1000</span>];</span><br></pre></td></tr></table></figure>
-<p>以字典序排序</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含头文件《cstring》</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s=<span class="built_in">strcmp</span>(a.name,b.name);</span><br><span class="line">    <span class="keyword">if</span>(s!=<span class="number">0</span>)<span class="keyword">return</span> s&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/以分数等int型数据的大小为排序</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.score&lt;b.score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>//多种排序规则组合</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a.worths!=b.worths)<span class="keyword">return</span> a.worths&lt;b.worths;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a.age!=b.age) <span class="keyword">return</span> a.age&lt;b.age;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">strcmp</span>(a.name,b.name)&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="结构体排序"><a href="#结构体排序" class="headerlink" title="#结构体排序"></a>#结构体排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以学生这个结构体为例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">   	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">int</span> worths;<span class="comment">//财富</span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">&#125;stu[<span class="number">1000</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="以字典序排序"><a href="#以字典序排序" class="headerlink" title="以字典序排序"></a>以字典序排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要包含头文件《cstring》</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s=<span class="built_in">strcmp</span>(a.name,b.name);</span><br><span class="line">    <span class="keyword">if</span>(s!=<span class="number">0</span>)<span class="keyword">return</span> s&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="以分数等int型数据的大小为排序"><a href="#以分数等int型数据的大小为排序" class="headerlink" title="/以分数等int型数据的大小为排序"></a>/以分数等int型数据的大小为排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.score&lt;b.score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="多种排序规则组合"><a href="#多种排序规则组合" class="headerlink" title="//多种排序规则组合"></a>//多种排序规则组合</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student a,Student b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a.worths!=b.worths)<span class="keyword">return</span> a.worths&lt;b.worths;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a.age!=b.age) <span class="keyword">return</span> a.age&lt;b.age;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">strcmp</span>(a.name,b.name)&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>总结：当要执行排序是，先要清楚哪一种排序的优先级更高，列出来，然后进行组合的排序规则。</p>
 
       
@@ -437,16 +832,11 @@ domf=\{x\mid c^Tx+d>0\}
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="1-仿射组合，凸组合，凸锥"><a href="#1-仿射组合，凸组合，凸锥" class="headerlink" title="1.仿射组合，凸组合，凸锥"></a>1.仿射组合，凸组合，凸锥</h3><p>仿射集：通过直线定义 ； </p>
-<script type="math/tex; mode=display">
-对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；</script><p>仿射组合：</p>
-<script type="math/tex; mode=display">
-tx+(1-t)y,对于任意t;</script><p>凸集：通过线段定义；</p>
-<script type="math/tex; mode=display">
-对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；</script><p>凸组合：</p>
-<script type="math/tex; mode=display">
-tx+(1-t)y,对于t属于[0,1];</script><p>凸锥：通过射线定义；</p>
-<script type="math/tex; mode=display">
+        <h2 id="仿射、凸、凸锥"><a href="#仿射、凸、凸锥" class="headerlink" title="仿射、凸、凸锥"></a>仿射、凸、凸锥</h2><h3 id="仿射组合，凸组合，凸锥"><a href="#仿射组合，凸组合，凸锥" class="headerlink" title="仿射组合，凸组合，凸锥"></a>仿射组合，凸组合，凸锥</h3><h4 id="仿射集：通过直线定义-；"><a href="#仿射集：通过直线定义-；" class="headerlink" title="仿射集：通过直线定义 ；"></a>仿射集：通过直线定义 ；</h4><script type="math/tex; mode=display">
+对于任意的x,y属于集合A,如果任意参数t；使得tx+(1-t)y都属于集合A.则集合A是一个仿射集；</script><h4 id="仿射组合："><a href="#仿射组合：" class="headerlink" title="仿射组合："></a>仿射组合：</h4><script type="math/tex; mode=display">
+tx+(1-t)y,对于任意t;</script><h4 id="凸集：通过线段定义；"><a href="#凸集：通过线段定义；" class="headerlink" title="凸集：通过线段定义；"></a>凸集：通过线段定义；</h4><script type="math/tex; mode=display">
+对于任意的x,y属于集合A,如果参数t属于[0,1], tx+(1-t)y都属于集合A.则集合A是一个凸集；</script><h4 id="凸组合："><a href="#凸组合：" class="headerlink" title="凸组合："></a>凸组合：</h4><script type="math/tex; mode=display">
+tx+(1-t)y,对于t属于[0,1];</script><h4 id="凸锥：通过射线定义；"><a href="#凸锥：通过射线定义；" class="headerlink" title="凸锥：通过射线定义；"></a>凸锥：通过射线定义；</h4><script type="math/tex; mode=display">
 对于任意的x,y和原点属于集合A,存在t>0,x=ty;</script>
       
 

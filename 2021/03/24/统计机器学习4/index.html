@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/3 | Hexo</title>
+  <title>统计机器学习4 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/03/index.html">
+  <meta name="description" content="SVM：间隔、对偶、核技巧分类：    硬间隔svm例如二分类的{0,1}；最大间隔分类器，线性分类器     软间隔svm例如（0,1）；线性分类器   kernel svm 非线性分类     硬间隔： 最大间隔分类器： max \quad margin(w,b);样本点\{x_i,y_i\},y_i\in\{-1,1\}\\ s.t:y_i(w^Tx_i+b)&gt;0;  \\margin(w,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计机器学习4">
+<meta property="og:url" content="http://example.com/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SVM：间隔、对偶、核技巧分类：    硬间隔svm例如二分类的{0,1}；最大间隔分类器，线性分类器     软间隔svm例如（0,1）；线性分类器   kernel svm 非线性分类     硬间隔： 最大间隔分类器： max \quad margin(w,b);样本点\{x_i,y_i\},y_i\in\{-1,1\}\\ s.t:y_i(w^Tx_i+b)&gt;0;  \\margin(w,">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-24T08:31:04.000Z">
+<meta property="article:modified_time" content="2021-03-24T09:05:55.043Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,259 +154,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-统计机器学习4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      统计机器学习4
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/" class="archive-article-date">
+
+        
+        <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/" class="archive-article-date">
   	<time datetime="2021-03-24T08:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/">统计机器学习4</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SVM：间隔、对偶、核技巧"><a href="#SVM：间隔、对偶、核技巧" class="headerlink" title="SVM：间隔、对偶、核技巧"></a>SVM：间隔、对偶、核技巧</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">硬间隔svm例如二分类的{0,1}；最大间隔分类器，线性分类器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">软间隔svm例如（0,1）；线性分类器</td>
+</tr>
+<tr>
+<td style="text-align:left">kernel svm 非线性分类</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="硬间隔："><a href="#硬间隔：" class="headerlink" title="硬间隔："></a>硬间隔：</h3><script type="math/tex; mode=display">
+最大间隔分类器：
+max \quad margin(w,b);样本点\{x_i,y_i\},y_i\in\{-1,1\}\\
+s.t:y_i(w^Tx_i+b)>0;
 
-        <div class="article-info info-on-right">
-          
-          
+\\margin(w,b)=min 最小的样本点到超平面的distance；\\
+distance=\frac{|w^Tx_i+b|}{\left\|w\right\|_2}
 
+\\对于y_i(w^Tx_i+b)做归一化max\quad  \frac{1}{\left\|w\right\|_2}；
+\\s.t.min \quad y_i(w^Tx_i+b)=1;等价于y_i(w^Tx_i+b)\ge 1</script><h3 id="对偶：见对偶章节；"><a href="#对偶：见对偶章节；" class="headerlink" title="对偶：见对偶章节；"></a>对偶：见对偶章节；</h3><p>方法：拉格朗日函数对（w,b)求导之后回带，然后就变成关于对偶变量的函数。最后会有明显的内积形式出现，也就将核方法引进，从线性分类器扩展到非线性可分了。</p>
+<h4 id="最后问题：（对偶问题）"><a href="#最后问题：（对偶问题）" class="headerlink" title="最后问题：（对偶问题）"></a>最后问题：（对偶问题）</h4><script type="math/tex; mode=display">
+min：\quad \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy_iy_jx_i^Tx_j-\sum_{i=1}^n\lambda_i;\\
+s.t:\lambda_i\ge0;\\
+\sum_{i=1}^n\lambda_iy_i=0;</script>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A04/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/" class="archive-article-date">
-  	<time datetime="2021-03-24T07:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">统计机器学习3</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A03/">统计机器学习3</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02/" class="archive-article-date">
-  	<time datetime="2021-03-24T07:32:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02/">统计机器学习2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/" class="archive-article-date">
-  	<time datetime="2021-03-24T06:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/24/%E7%BB%9F%E8%AE%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/">统计机器学习1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/22/%E5%AF%B9%E5%81%B6/" class="archive-article-date">
-  	<time datetime="2021-03-22T14:08:26.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/22/%E5%AF%B9%E5%81%B6/">凸优化笔记4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E5%8F%8A%E5%85%B6%E4%BE%8B%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2021-03-19T10:58:08.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/19/%E5%87%B8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E5%8F%8A%E5%85%B6%E4%BE%8B%E5%AD%90/">凸优化笔记3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/19/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2021-03-19T10:38:07.887Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/19/%E5%B8%B8%E8%A7%81%E5%87%B8%E9%9B%86%E5%8F%8A%E4%BF%9D%E6%8C%81%E5%87%B8%E6%80%A7%E7%9A%84%E5%8F%98%E6%8D%A2/">凸优化笔记2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/07/%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-03-07T06:41:09.562Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/04/%E5%87%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B01/" class="archive-article-date">
-  	<time datetime="2021-03-04T10:56:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/04/%E5%87%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B01/">凸优化笔记1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -425,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
